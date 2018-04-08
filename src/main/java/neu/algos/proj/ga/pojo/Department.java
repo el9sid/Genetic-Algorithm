@@ -1,4 +1,4 @@
-package ga.com.me.ga.domain;
+package neu.algos.proj.ga.pojo;
 
 public class Department {
     // ===== ?????????????
