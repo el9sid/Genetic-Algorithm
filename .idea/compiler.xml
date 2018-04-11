@@ -9,8 +9,8 @@
         <module name="Genetic-Algorithm" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Genetic-Algorithm" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="Genetic-Algorithm" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

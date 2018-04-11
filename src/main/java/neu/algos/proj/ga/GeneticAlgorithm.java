@@ -78,7 +78,6 @@ public class GeneticAlgorithm {
     }
 
     public Population evolvePopulation(Population population) {
-
-        return mutatePopulation(population);
+        return mutatePopulation(crossoverPopulation(population));
     }
 }
