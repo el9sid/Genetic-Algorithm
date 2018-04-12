@@ -10,10 +10,17 @@ public class Driver {
 
     private Data data;
     public static void main(String[] args){
+        int generationNumber = 0;
         Driver driver = new Driver();
         driver.data = new Data();
 
         driver.printAvailableData();
+
+        System.out.println("Generation: "+generationNumber);
+        System.out.print("Schedule ");
+        System.out.print("Lectures [department, lecture, room, instructor, meeting time]");
+        System.out.println("Fitness | Conflicts");
+        System.out.println("----------------------------------------------------------");
     }
 
     public void printAvailableData(){
