@@ -48,7 +48,7 @@ public class Data {
         courses = new ArrayList<Course>(Arrays.asList(course1, course2, course3, course4, course5, course6, course7));
 
         Department department1 = new Department("Engineering", new ArrayList<Course>(Arrays.asList(course1, course2, course3)));
-        Department department2 = new Department("Computer Science", new ArrayList<Course>(Arrays.asList(course4, course7)));
+        Department department2 = new Department("Computers", new ArrayList<Course>(Arrays.asList(course4, course7)));
         Department department3 = new Department("BlockChain", new ArrayList<Course>(Arrays.asList(course5, course6)));
         departments = new ArrayList<Department>(Arrays.asList(department1, department2, department3));
         departments.forEach(x -> numberOfLectures += x.getCourses().size());

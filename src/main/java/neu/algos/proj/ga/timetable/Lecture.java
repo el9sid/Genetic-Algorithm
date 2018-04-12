@@ -53,12 +53,11 @@ public class Lecture {
 
     @Override
     public String toString() {
-        return "Lecture{" +
-                "department=" + department.getName() +
-                ", course=" + course.getNumber() +
-                ", instructor=" + instructor.getId() +
-                ", meetingTime=" + meetingTime.getId() +
-                ", room=" + room.getNumber() +
+        return "{"+department.getName() +
+                ", " + course.getNumber() +
+                ", " + instructor.getId() +
+                ", " + meetingTime.getId() +
+                ", " + room.getNumber() +
                 '}';
     }
 }

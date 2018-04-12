@@ -20,8 +20,6 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return "Instructor{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 }

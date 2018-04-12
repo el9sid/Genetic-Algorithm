@@ -1,14 +1,20 @@
 package neu.algos.proj.ga;
 
+import neu.algos.proj.ga.timetable.Lecture;
+
+import java.util.ArrayList;
+
 public class Driver {
 
     public static final int POPULATION_SIZE = 9;
     public static final double MUTATION_RATE = 0.01;
     public static final double CROSSOVER_RATE = 0.9;
     public static final int TOURNAMENT_SELECTION_SIZE = 3;
-    public static final int ELITE_SCHEDULES_COUNT = 2;
+    public static final int ELITE_SCHEDULES_COUNT = 1;
 
     private Data data;
+    private int scheduleNumber = 0;
+    private int lectureNumber = 1;
     public static void main(String[] args){
         int generationNumber = 0;
         Driver driver = new Driver();
@@ -16,11 +22,73 @@ public class Driver {
 
         driver.printAvailableData();
 
-        System.out.println("Generation: "+generationNumber);
-        System.out.print("Schedule ");
-        System.out.print("Lectures [department, lecture, room, instructor, meeting time]");
-        System.out.println("Fitness | Conflicts");
-        System.out.println("----------------------------------------------------------");
+        System.out.println(">>> Generation #: "+generationNumber);
+        System.out.print("Schedule #|");
+        System.out.print("Lectures [Department, Lecture, Room, Instructor, Meeting-time]");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
+        System.out.println("---------------------------------------------------------");
+
+        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(driver.data);
+        Population population = new Population(Driver.POPULATION_SIZE, driver.data).sortByFitness();
+        population.getSchedules().forEach(schedule -> System.out.println("\t"+driver.scheduleNumber++
+                +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
+                +" | "+schedule.getNumberOfConflicts()));
+
+        driver.printSchedule(population.getSchedules().get(0), generationNumber);
+
+        driver.lectureNumber = 1;
+        while (population.getSchedules().get(0).getFitness()!=1.0) {
+            System.out.println(">>> Generation #: "+ ++generationNumber);
+            System.out.print("Schedule #|");
+            System.out.print("Lectures [Department, Lecture, Room, Instructor, Meeting-time]");
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
+            System.out.println("---------------------------------------------------------");
+
+            population = geneticAlgorithm.evolvePopulation(population).sortByFitness();
+            driver.scheduleNumber = 0;
+            population.getSchedules().forEach(schedule -> System.out.println("\t"+driver.scheduleNumber++
+                    +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
+                    +" | "+schedule.getNumberOfConflicts()));
+
+            driver.printSchedule(population.getSchedules().get(0), generationNumber);
+        }
+    }
+
+    private void printSchedule(Schedule schedule, int generation){
+
+        ArrayList<Lecture> lectures = schedule.getLectures();
+        System.out.print("\n \t \t");
+        System.out.println("Lecture #  | \tDepartment \t\t|\t\t Course (number, max students) \t | Room (Capacity) | " +
+                "Instructor (ID) \t\t| Meeting-time (ID)");
+        System.out.print("\t\t");
+        System.out.print("----------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        lectures.forEach(x -> {
+            int deptIndex = data.getDepartments().indexOf(x.getDepartment());
+            int coursesIndex = data.getCourses().indexOf(x.getCourse());
+            int roomsIndex = data.getRooms().indexOf(x.getRoom());
+            int instructorsIndex = data.getInstructors().indexOf(x.getInstructor());
+            int meetingTimeIndex = data.getMeetingTimes().indexOf(x.getMeetingTime());
+
+            System.out.print("\t\t\t");
+            System.out.print(String.format("  %1$02d  ", lectureNumber)+" |\t");
+            System.out.print(String.format("%1$15s", data.getDepartments().get(deptIndex).getName())+" | ");
+            System.out.print(String.format("%1$35s", data.getCourses().get(coursesIndex).getName()+
+            " ("+data.getCourses().get(coursesIndex).getNumber()+", "
+                    +data.getCourses().get(coursesIndex).getMaxStudents())+")\t |");
+            System.out.print(String.format("%1$10s", data.getRooms().get(roomsIndex).getNumber()+" ("
+                    +data.getRooms().get(roomsIndex).getMaxCapacity())+")\t   |");
+            System.out.print(String.format("%1$20s", data.getInstructors().get(instructorsIndex).getName() +" ("
+                    +data.getInstructors().get(instructorsIndex).getId())+")\t|");
+            System.out.println(data.getMeetingTimes().get(meetingTimeIndex).getTime()
+                    +" ("+data.getMeetingTimes().get(meetingTimeIndex).getId()+")");
+
+            lectureNumber++;
+        });
+
+        if(schedule.getFitness() == 1) System.out.println(">>> Solution generated in "+ (generation+1) +" generations");
+        System.out.print("\t\t----------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------");
     }
 
     public void printAvailableData(){
