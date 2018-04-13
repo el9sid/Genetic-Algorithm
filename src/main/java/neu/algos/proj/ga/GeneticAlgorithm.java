@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 public class GeneticAlgorithm {
 
-    //Evoloves the population from one generation to other using crossover.
+    //Evolves the population from one generation to other using crossover.
 
     private Data data;
 
@@ -57,9 +57,8 @@ public class GeneticAlgorithm {
                 .forEach(x -> schedules.set(x, population.getSchedules().get(x)));
 
         // performing mutation on schedules other than elite schedules
-        IntStream.range(Driver.ELITE_SCHEDULES_COUNT, population.getSchedules().size()).forEach(x -> {
-            schedules.set(x, mutatePopulation.getSchedules().get(x));
-        });
+        IntStream.range(Driver.ELITE_SCHEDULES_COUNT, population.getSchedules().size())
+                .forEach(x -> schedules.set(x, mutatePopulation.getSchedules().get(x)));
         return mutatePopulation;
     }
 
