@@ -127,20 +127,6 @@ public class Driver {
             Object obj = parser.parse(new FileReader("C:\\Users\\siddh\\OneDrive\\Documents\\GitHub\\Genetic-Algorithm\\src\\main\\resources\\constants.json"));
 
             jsonObject = (JSONObject) obj;
-//            System.out.println(jsonObject);
-
-//            long populationSize = (long) jsonObject.get("population_size");
-//            double mutationRate = (double) jsonObject.get("mutation_rate");
-//            double crossoverRate = (double) jsonObject.get("crossover_rate");
-//            long tournamentSelectionSize = (long) jsonObject.get("tournament_selection_size");
-//            long eliteScheduleCount = (long) jsonObject.get("elite_schedule_count");
-
-//            System.out.println("JSON Data:");
-//            System.out.println(populationSize);
-//            System.out.println(mutationRate);
-//            System.out.println(crossoverRate);
-//            System.out.println(tournamentSelectionSize);
-//            System.out.println(eliteScheduleCount);
 
         } catch (ParseException | IOException e) {
             e.printStackTrace();
