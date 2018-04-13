@@ -30,7 +30,7 @@ public class Driver {
 
         System.out.println(">>> Generation #: "+generationNumber);
         System.out.print("Schedule #|");
-        System.out.print("Lectures [Department, Lecture, Room, Instructor, Meeting-time]");
+        System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
         System.out.println("---------------------------------------------------------");
 
@@ -46,7 +46,7 @@ public class Driver {
         while (population.getSchedules().get(0).getFitness()!=1.0) {
             System.out.println(">>> Generation #: "+ ++generationNumber);
             System.out.print("Schedule #|");
-            System.out.print("Lectures [Department, Lecture, Room, Instructor, Meeting-time]");
+            System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
             System.out.println("---------------------------------------------------------");
 
@@ -66,7 +66,7 @@ public class Driver {
         ArrayList<Lecture> lectures = schedule.getLectures();
         System.out.print("\n \t \t");
         System.out.println("Lecture #  | \tDepartment \t\t|\t\t Course (number, max students) \t | Room (Capacity) | " +
-                "Instructor (ID) \t\t| Meeting-time (ID)");
+                "Professor (ID) \t\t| Meeting-time (ID)");
         System.out.print("\t\t");
         System.out.print("----------------------------------------------------------------------------");
         System.out.println("-------------------------------------------------------------------");
@@ -74,7 +74,7 @@ public class Driver {
             int deptIndex = data.getDepartments().indexOf(x.getDepartment());
             int coursesIndex = data.getCourses().indexOf(x.getCourse());
             int roomsIndex = data.getRooms().indexOf(x.getRoom());
-            int instructorsIndex = data.getInstructors().indexOf(x.getInstructor());
+            int instructorsIndex = data.getProfessors().indexOf(x.getProfessor());
             int meetingTimeIndex = data.getMeetingTimes().indexOf(x.getMeetingTime());
 
             System.out.print("\t\t\t");
@@ -85,8 +85,8 @@ public class Driver {
                     +data.getCourses().get(coursesIndex).getMaxStudents())+")\t |");
             System.out.print(String.format("%1$10s", data.getRooms().get(roomsIndex).getNumber()+" ("
                     +data.getRooms().get(roomsIndex).getMaxCapacity())+")\t   |");
-            System.out.print(String.format("%1$20s", data.getInstructors().get(instructorsIndex).getName() +" ("
-                    +data.getInstructors().get(instructorsIndex).getId())+")\t|");
+            System.out.print(String.format("%1$20s", data.getProfessors().get(instructorsIndex).getName() +" ("
+                    +data.getProfessors().get(instructorsIndex).getId())+")\t|");
             System.out.println(data.getMeetingTimes().get(meetingTimeIndex).getTime()
                     +" ("+data.getMeetingTimes().get(meetingTimeIndex).getId()+")");
 
@@ -106,12 +106,12 @@ public class Driver {
         System.out.println("");
         System.out.println("Courses -------->");
         data.getCourses().forEach(x -> System.out.println("course number: "+x.getNumber()
-                +", name: "+x.getName() +", instructors: "+x.getInstructors()+", max students: "+x.getMaxStudents()));
+                +", name: "+x.getName() +", instructors: "+x.getProfessors()+", max students: "+x.getMaxStudents()));
         System.out.println("Rooms -------->");
         data.getRooms().forEach(x -> System.out.println("room number: "+x.getNumber()
                 +", room capacity: "+x.getMaxCapacity()));
         System.out.println("Instructors -------->");
-        data.getInstructors().forEach(x -> System.out.println("instructor id: "+x.getId()
+        data.getProfessors().forEach(x -> System.out.println("instructor id: "+x.getId()
                 +", instructor name: "+x.getName()));
         System.out.println("Meeting Times -------->");
         data.getMeetingTimes().forEach(x -> System.out.println("meeting id: "+x.getId()+", meeting time: "+x.getTime()));

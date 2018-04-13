@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Data {
 
     private ArrayList<Room> rooms;
-    private ArrayList<Instructor> instructors;
+    private ArrayList<Professor> professors;
     private ArrayList<Department> departments;
     private ArrayList<Course> courses;
     private ArrayList<MeetingTime> meetingTimes;
@@ -32,19 +32,19 @@ public class Data {
         MeetingTime meetingTime4 = new MeetingTime("MT4", "TTH 10:30 - 12:00");
         meetingTimes = new ArrayList<MeetingTime>(Arrays.asList(meetingTime1, meetingTime2, meetingTime3, meetingTime4));
 
-        Instructor instructor1 = new Instructor("I1", "Dr. Hillyard");
-        Instructor instructor2 = new Instructor("I2", "Dr. Bugrara");
-        Instructor instructor3 = new Instructor("I3", "Dr. Parikh");
-        Instructor instructor4 = new Instructor("I4", "Dr. Ozbek");
-        instructors = new ArrayList<Instructor>(Arrays.asList(instructor1, instructor2, instructor3, instructor4));
+        Professor professor1 = new Professor("I1", "Dr. Hillyard");
+        Professor professor2 = new Professor("I2", "Dr. Bugrara");
+        Professor professor3 = new Professor("I3", "Dr. Parikh");
+        Professor professor4 = new Professor("I4", "Dr. Ozbek");
+        professors = new ArrayList<Professor>(Arrays.asList(professor1, professor2, professor3, professor4));
 
-        Course course1 = new Course("C1", "Physics101", 25, new ArrayList<Instructor>(Arrays.asList(instructor1,instructor2)));
-        Course course2 = new Course("C2", "Mathematics101", 30, new ArrayList<Instructor>(Arrays.asList(instructor2,instructor3)));
-        Course course3 = new Course("C3", "Chemistry301", 45, new ArrayList<Instructor>(Arrays.asList(instructor4)));
-        Course course4 = new Course("C4", "Algorithms301", 35, new ArrayList<Instructor>(Arrays.asList(instructor1, instructor4)));
-        Course course5 = new Course("C5", "CryptoCurrency401", 35, new ArrayList<Instructor>(Arrays.asList(instructor2, instructor3)));
-        Course course6 = new Course("C6", "SmartContracts201", 25, new ArrayList<Instructor>(Arrays.asList(instructor2, instructor4)));
-        Course course7 = new Course("C7", "ApplicationEngineering301", 45, new ArrayList<Instructor>(Arrays.asList(instructor1, instructor2, instructor3, instructor4)));
+        Course course1 = new Course("C1", "Physics101", 25, new ArrayList<Professor>(Arrays.asList(professor1, professor2)));
+        Course course2 = new Course("C2", "Mathematics101", 30, new ArrayList<Professor>(Arrays.asList(professor2, professor3)));
+        Course course3 = new Course("C3", "Chemistry301", 45, new ArrayList<Professor>(Arrays.asList(professor4)));
+        Course course4 = new Course("C4", "Algorithms301", 35, new ArrayList<Professor>(Arrays.asList(professor1, professor4)));
+        Course course5 = new Course("C5", "CryptoCurrency401", 35, new ArrayList<Professor>(Arrays.asList(professor2, professor3)));
+        Course course6 = new Course("C6", "SmartContracts201", 25, new ArrayList<Professor>(Arrays.asList(professor2, professor4)));
+        Course course7 = new Course("C7", "ApplicationEngineering301", 45, new ArrayList<Professor>(Arrays.asList(professor1, professor2, professor3, professor4)));
         courses = new ArrayList<Course>(Arrays.asList(course1, course2, course3, course4, course5, course6, course7));
 
         Department department1 = new Department("Engineering", new ArrayList<Course>(Arrays.asList(course1, course2, course3)));
@@ -61,8 +61,8 @@ public class Data {
         return rooms;
     }
 
-    public ArrayList<Instructor> getInstructors() {
-        return instructors;
+    public ArrayList<Professor> getProfessors() {
+        return professors;
     }
 
     public ArrayList<Department> getDepartments() {

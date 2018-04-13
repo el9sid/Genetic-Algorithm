@@ -26,7 +26,7 @@ public class Schedule {
                         Lecture newLecture = new Lecture(lectureNumber++, department, course);
                         newLecture.setMeetingTime(data.getMeetingTimes().get((int) (data.getMeetingTimes().size() * Math.random())));
                         newLecture.setRoom(data.getRooms().get((int) (data.getRooms().size() * Math.random())));
-                        newLecture.setInstructor(data.getInstructors().get((int) (data.getInstructors().size() * Math.random())));
+                        newLecture.setProfessor(data.getProfessors().get((int) (data.getProfessors().size() * Math.random())));
                         lectures.add(newLecture);
                     });
                 }
@@ -66,7 +66,7 @@ public class Schedule {
                     //check if same room is assigned to multiple lectures
                     if(x.getRoom() == y.getRoom()) numberOfConflicts++;
                     //check if an instructor has multiple engagements at the same time
-                    if (x.getInstructor() == y.getInstructor()) numberOfConflicts++;
+                    if (x.getProfessor() == y.getProfessor()) numberOfConflicts++;
                 }
 
             });

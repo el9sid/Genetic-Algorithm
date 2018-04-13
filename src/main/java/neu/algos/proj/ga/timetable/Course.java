@@ -7,13 +7,13 @@ public class Course {
     private String number;
     private String name;
     private int maxStudents;
-    private ArrayList<Instructor> instructors;
+    private ArrayList<Professor> professors;
 
-    public Course(String number, String name, int maxStudents, ArrayList<Instructor> instructors) {
+    public Course(String number, String name, int maxStudents, ArrayList<Professor> professors) {
         this.number = number;
         this.name = name;
         this.maxStudents = maxStudents;
-        this.instructors = instructors;
+        this.professors = professors;
     }
 
     public String getNumber() {
@@ -28,8 +28,8 @@ public class Course {
         return maxStudents;
     }
 
-    public ArrayList<Instructor> getInstructors() {
-        return instructors;
+    public ArrayList<Professor> getProfessors() {
+        return professors;
     }
 
     @Override

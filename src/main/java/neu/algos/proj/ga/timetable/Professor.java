@@ -1,11 +1,11 @@
 package neu.algos.proj.ga.timetable;
 
-public class Instructor {
+public class Professor {
 
     private String id;
     private String name;
 
-    public Instructor(String id, String name) {
+    public Professor(String id, String name) {
         this.id = id;
         this.name = name;
     }

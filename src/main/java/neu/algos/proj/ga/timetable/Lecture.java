@@ -5,7 +5,7 @@ public class Lecture {
     private int id;
     private Department department;
     private Course course;
-    private Instructor instructor;
+    private Professor professor;
     private MeetingTime meetingTime;
     private Room room;
 
@@ -15,8 +15,8 @@ public class Lecture {
         this.course = course;
     }
 
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 
     public void setMeetingTime(MeetingTime meetingTime) {
@@ -39,8 +39,8 @@ public class Lecture {
         return course;
     }
 
-    public Instructor getInstructor() {
-        return instructor;
+    public Professor getProfessor() {
+        return professor;
     }
 
     public MeetingTime getMeetingTime() {
@@ -55,7 +55,7 @@ public class Lecture {
     public String toString() {
         return "{"+department.getName() +
                 ", " + course.getNumber() +
-                ", " + instructor.getId() +
+                ", " + professor.getId() +
                 ", " + meetingTime.getId() +
                 ", " + room.getNumber() +
                 '}';
