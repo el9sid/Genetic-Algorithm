@@ -1,20 +1,26 @@
 package neu.algos.proj.ga;
 
 import neu.algos.proj.ga.timetable.Lecture;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Driver {
 
-    public static final int POPULATION_SIZE = 9;
-    public static final double MUTATION_RATE = 0.01;
-    public static final double CROSSOVER_RATE = 0.9;
-    public static final int TOURNAMENT_SELECTION_SIZE = 3;
-    public static final int ELITE_SCHEDULES_COUNT = 1;
+    public static final int POPULATION_SIZE = (int)((long)readJSONData().get("population_size"));
+    public static final double MUTATION_RATE = (double) readJSONData().get("mutation_rate");
+    public static final double CROSSOVER_RATE = (double) readJSONData().get("crossover_rate");
+    public static final int TOURNAMENT_SELECTION_SIZE = (int)((long)readJSONData().get("tournament_selection_size"));
+    public static final int ELITE_SCHEDULES_COUNT = (int)((long)readJSONData().get("elite_schedule_count"));
 
     private Data data;
     private int scheduleNumber = 0;
     private int lectureNumber = 1;
+
     public static void main(String[] args){
         int generationNumber = 0;
         Driver driver = new Driver();
@@ -52,6 +58,7 @@ public class Driver {
 
             driver.printSchedule(population.getSchedules().get(0), generationNumber);
         }
+
     }
 
     private void printSchedule(Schedule schedule, int generation){
@@ -109,5 +116,37 @@ public class Driver {
         System.out.println("Meeting Times -------->");
         data.getMeetingTimes().forEach(x -> System.out.println("meeting id: "+x.getId()+", meeting time: "+x.getTime()));
         System.out.println("---------------------------------------------------------");
+    }
+
+    private static JSONObject readJSONData() {
+
+        JSONParser parser = new JSONParser();
+
+        JSONObject jsonObject = null;
+        try {
+            Object obj = parser.parse(new FileReader("C:\\Users\\siddh\\OneDrive\\Documents\\GitHub\\Genetic-Algorithm\\src\\main\\resources\\constants.json"));
+
+            jsonObject = (JSONObject) obj;
+//            System.out.println(jsonObject);
+
+//            long populationSize = (long) jsonObject.get("population_size");
+//            double mutationRate = (double) jsonObject.get("mutation_rate");
+//            double crossoverRate = (double) jsonObject.get("crossover_rate");
+//            long tournamentSelectionSize = (long) jsonObject.get("tournament_selection_size");
+//            long eliteScheduleCount = (long) jsonObject.get("elite_schedule_count");
+
+//            System.out.println("JSON Data:");
+//            System.out.println(populationSize);
+//            System.out.println(mutationRate);
+//            System.out.println(crossoverRate);
+//            System.out.println(tournamentSelectionSize);
+//            System.out.println(eliteScheduleCount);
+
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return jsonObject;
+
     }
 }
