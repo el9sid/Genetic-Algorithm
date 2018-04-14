@@ -1,8 +1,8 @@
 {
-    "population_size": 10,
-    "mutation_rate": 0.01,
-    "crossover_rate": 0.09,
+    "population_size": 50,
+    "mutation_rate": 0.02,
+    "crossover_rate": 0.5,
     "tournament_selection_size": 5,
-    "elite_schedule_count": 2
+    "elite_schedule_count": 10
 
 }

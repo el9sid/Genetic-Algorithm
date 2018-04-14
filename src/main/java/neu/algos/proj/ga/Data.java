@@ -1,9 +1,15 @@
 package neu.algos.proj.ga;
 
 import neu.algos.proj.ga.timetable.*;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
 public class Data {
 
@@ -25,6 +31,9 @@ public class Data {
         Room room2 = new Room("R2", 35);
         Room room3 = new Room("R3", 45);
         rooms = new ArrayList<Room>(Arrays.asList(room1,room2,room3));
+//        rooms = new ArrayList<Room>((Collection<? extends Room>) readJSONData().get("Room List"));
+//        rooms.addAll((Collection<? extends Room>) readJSONData().get("Room List"));
+//        System.out.println(rooms);
 
         MeetingTime meetingTime1 = new MeetingTime("MT1", "MWF 09:00 - 10:00");
         MeetingTime meetingTime2 = new MeetingTime("MT2", "MWF 10:00 - 11:00");
@@ -32,11 +41,12 @@ public class Data {
         MeetingTime meetingTime4 = new MeetingTime("MT4", "TTH 10:30 - 12:00");
         meetingTimes = new ArrayList<MeetingTime>(Arrays.asList(meetingTime1, meetingTime2, meetingTime3, meetingTime4));
 
-        Professor professor1 = new Professor("I1", "Dr. Hillyard");
-        Professor professor2 = new Professor("I2", "Dr. Bugrara");
-        Professor professor3 = new Professor("I3", "Dr. Parikh");
-        Professor professor4 = new Professor("I4", "Dr. Ozbek");
+        Professor professor1 = new Professor("P1", "Dr. Hillyard");
+        Professor professor2 = new Professor("P2", "Dr. Bugrara");
+        Professor professor3 = new Professor("P3", "Dr. Parikh");
+        Professor professor4 = new Professor("P4", "Dr. Ozbek");
         professors = new ArrayList<Professor>(Arrays.asList(professor1, professor2, professor3, professor4));
+//        professors = new ArrayList<Professor>((Collection<? extends Professor>) readJSONData().get("Professor List"));
 
         Course course1 = new Course("C1", "Physics101", 25, new ArrayList<Professor>(Arrays.asList(professor1, professor2)));
         Course course2 = new Course("C2", "Mathematics101", 30, new ArrayList<Professor>(Arrays.asList(professor2, professor3)));
@@ -80,4 +90,28 @@ public class Data {
     public int getNumberOfLectures() {
         return numberOfLectures;
     }
+
+    //read data from a json file
+    private JSONObject readJSONData(){
+
+        JSONParser parser = new JSONParser();
+
+        JSONObject jsonObject = null;
+        try {
+            Object obj = parser.parse(new FileReader("C:\\Users\\siddh\\OneDrive\\Documents\\GitHub\\Genetic-Algorithm\\src\\main\\resources\\data.json"));
+
+            jsonObject = (JSONObject) obj;
+
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return jsonObject;
+    }
+
+    //for unit testing the Data class
+//    public static void main(String[] args) {
+//        Data data = new Data();
+//        data.initialize();
+//    }
 }

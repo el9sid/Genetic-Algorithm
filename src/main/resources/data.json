@@ -1,0 +1,48 @@
+{
+  "Room List": [
+    {
+      "id": "R1",
+      "maxCapacity": "25"
+    },
+    {
+      "id": "R2",
+      "maxCapacity": "35"
+    },
+    {
+      "id": "R3",
+      "maxCapacity": "45"
+    },
+    {
+      "id": "R4",
+      "maxCapacity": "30"
+    }
+  ],
+  "Professor List": [
+    {
+      "id": "P1",
+      "name": "Dr. Hillyard"
+    },
+    {
+      "id": "P2",
+      "name": "Dr. Bugrara"
+    },
+    {
+      "id": "P3",
+      "name": "Dr. Ozbek"
+    },
+    {
+      "id": "P4",
+      "name": "Dr. Parikh"
+    }
+  ],
+  "Course List":[
+    {
+      "number": "C1",
+      "name": "Physics101",
+      "maxStudents": "25",
+      "professors":[
+
+      ]
+    }
+  ]
+}
