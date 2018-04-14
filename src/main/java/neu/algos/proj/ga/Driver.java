@@ -1,5 +1,11 @@
 package neu.algos.proj.ga;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
 import neu.algos.proj.ga.timetable.Lecture;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -9,7 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Driver {
+public class Driver extends Application {
 
     public static final int POPULATION_SIZE = (int)((long)readJSONData().get("population_size"));
     public static final double MUTATION_RATE = (double) readJSONData().get("mutation_rate");
@@ -21,8 +27,13 @@ public class Driver {
     private int scheduleNumber = 0;
     private int lectureNumber = 1;
 
+    private static ArrayList<Double> fitnessList = new ArrayList<>();
+    private static int totalGenerations;
+
     public static void main(String[] args){
         int generationNumber = 0;
+//        ArrayList<Double> fitnessList = new ArrayList<>();
+
         Driver driver = new Driver();
         driver.data = new Data();
 
@@ -36,9 +47,11 @@ public class Driver {
 
         GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(driver.data);
         Population population = new Population(Driver.POPULATION_SIZE, driver.data).sortByFitness();
-        population.getSchedules().forEach(schedule -> System.out.println("\t"+driver.scheduleNumber++
-                +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
-                +" | "+schedule.getNumberOfConflicts()));
+        population.getSchedules().forEach(schedule -> {
+            System.out.println("\t"+driver.scheduleNumber++
+                    +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
+                    +" | "+schedule.getNumberOfConflicts());
+        });
 
         driver.printSchedule(population.getSchedules().get(0), generationNumber);
 
@@ -57,8 +70,11 @@ public class Driver {
                     +" | "+schedule.getNumberOfConflicts()));
 
             driver.printSchedule(population.getSchedules().get(0), generationNumber);
+            fitnessList.add(population.getSchedules().get(0).getFitness());
         }
 
+        totalGenerations = generationNumber;
+        launch();
     }
 
     private void printSchedule(Schedule schedule, int generation){
@@ -134,5 +150,40 @@ public class Driver {
 
         return jsonObject;
 
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Generation-Fitness Chart");
+
+        final NumberAxis xAxis = new NumberAxis();
+        final NumberAxis yAxis = new NumberAxis();
+
+        xAxis.setLabel("Generation Number");
+        yAxis.setLabel("Fitness Score");
+
+        final LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
+
+        lineChart.setTitle("Timetable fitness chart");
+
+        Scene scene = new Scene(lineChart, 800, 600);
+
+        XYChart.Series series = plotData();
+        lineChart.getData().add(series);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public XYChart.Series plotData() {
+        XYChart.Series series = new XYChart.Series();
+        System.out.println("generations: "+totalGenerations);
+        System.out.println("fitness list: "+fitnessList.size());
+
+        for (int i = 0; i<totalGenerations && fitnessList.size()!=0; i++) {
+            series.getData().add(new XYChart.Data<>(i, fitnessList.get(i)));
+        }
+
+        return series;
     }
 }
