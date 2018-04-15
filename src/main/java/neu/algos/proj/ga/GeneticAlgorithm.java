@@ -18,12 +18,12 @@ public class GeneticAlgorithm {
         Population crossoverPopulation = new Population(population.getSchedules().size(), data);
 
         //performing elitism
-        IntStream.range(0, Driver.ELITE_SCHEDULES_COUNT)
+        IntStream.range(0, GenerateSchedule.ELITE_SCHEDULES_COUNT)
                 .forEach(x -> crossoverPopulation.getSchedules().set(x, population.getSchedules().get(x)));
 
         //for remaining schedules
-        IntStream.range(Driver.ELITE_SCHEDULES_COUNT, population.getSchedules().size()).forEach(x -> {
-            if (Driver.CROSSOVER_RATE > Math.random()) {
+        IntStream.range(GenerateSchedule.ELITE_SCHEDULES_COUNT, population.getSchedules().size()).forEach(x -> {
+            if (GenerateSchedule.CROSSOVER_RATE > Math.random()) {
                 //get the fittest schedules to crossover and create new population
                 Schedule schedule1 = selectTournamentPopulation(population).sortByFitness().getSchedules().get(0);
                 Schedule schedule2 = selectTournamentPopulation(population).sortByFitness().getSchedules().get(0);
@@ -39,8 +39,8 @@ public class GeneticAlgorithm {
 
     public Population selectTournamentPopulation(Population population) {
 
-        Population tournamentPopulation = new Population(Driver.TOURNAMENT_SELECTION_SIZE, data);
-        IntStream.range(0, Driver.TOURNAMENT_SELECTION_SIZE).forEach(x -> {
+        Population tournamentPopulation = new Population(GenerateSchedule.TOURNAMENT_SELECTION_SIZE, data);
+        IntStream.range(0, GenerateSchedule.TOURNAMENT_SELECTION_SIZE).forEach(x -> {
             //get random populations based on the tournament size
             tournamentPopulation.getSchedules()
                     .set(x, population.getSchedules()
@@ -53,11 +53,11 @@ public class GeneticAlgorithm {
 
         Population mutatePopulation = new Population(population.getSchedules().size(), data);
         ArrayList<Schedule> schedules = mutatePopulation.getSchedules();
-        IntStream.range(0, Driver.ELITE_SCHEDULES_COUNT)
+        IntStream.range(0, GenerateSchedule.ELITE_SCHEDULES_COUNT)
                 .forEach(x -> schedules.set(x, population.getSchedules().get(x)));
 
         // performing mutation on schedules other than elite schedules
-        IntStream.range(Driver.ELITE_SCHEDULES_COUNT, population.getSchedules().size())
+        IntStream.range(GenerateSchedule.ELITE_SCHEDULES_COUNT, population.getSchedules().size())
                 .forEach(x -> schedules.set(x, mutatePopulation.getSchedules().get(x)));
         return mutatePopulation;
     }
@@ -71,14 +71,14 @@ public class GeneticAlgorithm {
         return crossoverSchedule;
     }
 
-    public Schedule mutateSchedule(Schedule scheduleMutation) {
-        Schedule schedule = new Schedule(data).initialize();
-        IntStream.range(0, scheduleMutation.getLectures().size()).forEach(x -> {
-            if(Driver.MUTATION_RATE > Math.random()) scheduleMutation.getLectures().set(x, schedule.getLectures().get(x));
-        });
-
-        return scheduleMutation;
-    }
+//    public Schedule mutateSchedule(Schedule scheduleMutation) {
+//        Schedule schedule = new Schedule(data).initialize();
+//        IntStream.range(0, scheduleMutation.getLectures().size()).forEach(x -> {
+//            if(GenerateSchedule.MUTATION_RATE > Math.random()) scheduleMutation.getLectures().set(x, schedule.getLectures().get(x));
+//        });
+//
+//        return scheduleMutation;
+//    }
 
     public Population evolvePopulation(Population population) {
         return mutatePopulation(crossoverPopulation(population));

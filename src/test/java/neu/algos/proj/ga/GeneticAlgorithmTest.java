@@ -36,10 +36,15 @@ public class GeneticAlgorithmTest {
 
     @Test
     public void crossoverSchedule() {
-    }
+        Population p1 = new Population(200, data);
+        Schedule s1 = p1.sortByFitness().getSchedules().get(0);
+        Schedule s2 = p1.sortByFitness().getSchedules().get(1);
+        Schedule s3 = geneticAlgorithm.crossoverSchedule(s1, s2);
 
-    @Test
-    public void mutateSchedule() {
+        assertNotNull(s1);
+        assertNotNull(s2);
+        assertNotSame(s1, s3);
+        assertNotSame(s2, s3);
     }
 
     @Test

@@ -14,14 +14,12 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-public class Driver extends Application {
+public class GenerateSchedule extends Application {
 
-    public static final int POPULATION_SIZE = (int) ((long) readJSONData().get("population_size"));
+    private static final int POPULATION_SIZE = (int) ((long) readJSONData().get("population_size"));
     public static final double MUTATION_RATE = (double) readJSONData().get("mutation_rate");
     public static final double CROSSOVER_RATE = (double) readJSONData().get("crossover_rate");
     public static final int TOURNAMENT_SELECTION_SIZE = (int) ((long) readJSONData().get("tournament_selection_size"));
@@ -31,66 +29,14 @@ public class Driver extends Application {
     private Data data;
     private int scheduleNumber = 0;
     private int lectureNumber = 1;
+    private static ArrayList<Integer> totalConflicts = new ArrayList<>();
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-//        int generationNumber = 0;
-////        ArrayList<Double> fitnessList = new ArrayList<>();
-//
-//        Driver driver = new Driver();
-//        driver.data = new Data();
-//
-//        driver.printAvailableData();
-//
-//        System.out.println(">>> Generation #: "+generationNumber);
-//        System.out.print("Schedule #|");
-//        System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
-//        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
-//        System.out.println("---------------------------------------------------------");
-//
-//        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(driver.data);
-//        Population population = new Population(Driver.POPULATION_SIZE, driver.data).sortByFitness();
-//
-//        //printing the initial population
-//        population.getSchedules().forEach(schedule -> System.out.println("\t"+driver.scheduleNumber++
-//                +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
-//                +" | "+schedule.getNumberOfConflicts()));
-//
-//        driver.printSchedule(population.getSchedules().get(0), generationNumber);
-//
-//        driver.lectureNumber = 1;
-//        while (population.getSchedules().get(0).getFitness()!=1.0) {
-////            System.out.println(">>> Generation #: "+ ++generationNumber);
-////            System.out.print("Schedule #|");
-////            System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
-////            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
-////            System.out.println("---------------------------------------------------------");
-//
-//            population = geneticAlgorithm.evolvePopulation(population).sortByFitness();
-////            driver.scheduleNumber = 0;
-//            ++generationNumber;
-//            driver.scheduleNumber++;
-////            population.getSchedules().forEach(schedule -> System.out.println("\t"+driver.scheduleNumber++
-////                    +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
-////                    +" | "+schedule.getNumberOfConflicts()));
-//
-////            driver.printSchedule(population.getSchedules().get(0), generationNumber);
-//            fitnessList.add(population.getSchedules().get(0).getFitness());
-//        }
-//
-//        System.out.println(">>> Generation #: "+ generationNumber);
-//        System.out.print("Schedule #|");
-//        System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
-//        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
-//        System.out.println("---------------------------------------------------------");
-//        System.out.println(driver.scheduleNumber+"---"+population.getSchedules().get(0)+"----"+population.getSchedules().get(0).getFitness()
-//                +"-----"+population.getSchedules().get(0).getNumberOfConflicts());
-//
-//        totalGenerations = generationNumber;
-//        launch();
-        Driver driver = new Driver();
-        driver.run();
+        GenerateSchedule generateSchedule = new GenerateSchedule();
+        generateSchedule.run();
     }
 
+    //reading constants from the JSON file
     private static JSONObject readJSONData() {
 
         JSONParser parser = new JSONParser();
@@ -98,7 +44,6 @@ public class Driver extends Application {
         JSONObject jsonObject = null;
         try {
             Object obj = parser.parse(new FileReader("src/main/resources/constants.json"));
-//            Object obj = parser.parse(new FileReader("C:\\Users\\siddh\\OneDrive\\Documents\\GitHub\\Genetic-Algorithm\\src\\main\\resources\\constants.json"));
 
             jsonObject = (JSONObject) obj;
 
@@ -110,12 +55,18 @@ public class Driver extends Application {
 
     }
 
+    /**
+     * @purpose generates schedules
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
+
     private void run() throws ExecutionException, InterruptedException {
         int generationNumber = 0;
-        Driver driver = new Driver();
-        driver.data = new Data();
+        GenerateSchedule generateSchedule = new GenerateSchedule();
+        generateSchedule.data = new Data();
 
-        driver.printAvailableData();
+        generateSchedule.printAvailableData();
 
         System.out.println(">>> Generation #: " + generationNumber);
         System.out.print("Schedule #|");
@@ -123,61 +74,45 @@ public class Driver extends Application {
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
         System.out.println("---------------------------------------------------------");
 
-        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(driver.data);
-        Population population = new Population(Driver.POPULATION_SIZE, driver.data).sortByFitness();
+        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(generateSchedule.data);
+        Population population = new Population(GenerateSchedule.POPULATION_SIZE, generateSchedule.data).sortByFitness();
 
         //printing the initial population
         Schedule initialSchedule = population.getSchedules().get(0);
         System.out.println(initialSchedule + "===" + initialSchedule.getFitness() + "===" + initialSchedule.getNumberOfConflicts());
 
-//        population.getSchedules().forEach(schedule -> System.out.println("\t"+driver.scheduleNumber++
-//                +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
-//                +" | "+schedule.getNumberOfConflicts()));
+        generateSchedule.printSchedule(population.getSchedules().get(0), generationNumber);
 
-        driver.printSchedule(population.getSchedules().get(0), generationNumber);
-
-        driver.lectureNumber = 1;
+        generateSchedule.lectureNumber = 1;
         while (population.getSchedules().get(0).getFitness() != 1.0) {
             //for sequence execution
             population = geneticAlgorithm.evolvePopulation(population).sortByFitness();
             //for parallel execution
 //            population = parallel_execution(geneticAlgorithm, population).sortByFitness();
-//            driver.scheduleNumber = 0;
+
             ++generationNumber;
-            driver.scheduleNumber++;
+            generateSchedule.scheduleNumber++;
             Schedule bestSchedule = population.getSchedules().get(0);
             System.out.println(bestSchedule + "---" + bestSchedule.getFitness() + "---" + bestSchedule.getNumberOfConflicts() + "----"
                     + bestSchedule.getLectures().size());
-//            population.getSchedules().forEach(schedule -> System.out.println("\t"+driver.scheduleNumber++
-//                    +"\t| "+schedule+" | "+ String.format("%.5f", schedule.getFitness())
-//                    +" | "+schedule.getNumberOfConflicts()));
 
-//            driver.printSchedule(population.getSchedules().get(0), generationNumber);
+//            generateSchedule.printSchedule(population.getSchedules().get(0), generationNumber);
             fitnessList.add(population.getSchedules().get(0).getFitness());
+            totalConflicts.add(population.getSchedules().get(5).getNumberOfConflicts());
         }
-
         totalGenerations = generationNumber;
-        printFinalResult(population, driver);
+        printFinalResult(population, generateSchedule);
         launch();
     }
 
-//    private void parallel_run(GeneticAlgorithm geneticAlgorithm, Population population){
-//
-//        CompletableFuture<Population> cf1 = CompletableFuture.supplyAsync(()->geneticAlgorithm.evolvePopulation(population));
-//        CompletableFuture<Population> cf2 = CompletableFuture.supplyAsync(()->geneticAlgorithm.evolvePopulation(population));
-//
-//        cf1 = cf1.whenComplete(((aVoid, throwable) -> System.out.println("cf1 complete")));
-//        cf2 = cf2.whenComplete(((aVoid, throwable) -> System.out.println("cf2 complete")));
-//
-//
-//        CompletableFuture<Population> combine = cf1.thenCombineAsync(cf2)
-//
-//        CompletableFuture<Void> allOf = CompletableFuture.allOf(all);
-//
-//        allOf.whenComplete(((aVoid, throwable) -> System.out.println("completed allOf")));
-//        allOf.join();
-//    }
-
+    /**
+     *
+     * @param geneticAlgorithm
+     * @param population
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     //Code for parallel execution
     private Population parallel_execution(GeneticAlgorithm geneticAlgorithm, Population population) throws ExecutionException, InterruptedException {
 
@@ -192,9 +127,9 @@ public class Driver extends Application {
         completableFuture2 = completableFuture2.whenComplete(((aVoid, throwable) -> System.out.println("cf2 complete")));
 
         CompletableFuture<Population> combine = completableFuture2.thenCombine(completableFuture1, (Population x1, Population x2) -> {
-            Population combinedPopulation = new Population(x1.getSchedules().size()+x2.getSchedules().size(),data);
+            Population combinedPopulation = new Population(x1.getSchedules().size() + x2.getSchedules().size(), data);
             Population ps = merge(combinedPopulation, x1, x2);
-            System.out.println("ps: "+ps.getSchedules().get(0));
+            System.out.println("ps: " + ps.getSchedules().get(0));
             return ps;
         });
 
@@ -202,8 +137,15 @@ public class Driver extends Application {
         return result;
     }
 
+    /**
+     *
+     * @param result
+     * @param left
+     * @param right
+     * @return
+     */
     private Population merge(Population result, Population left,
-                            Population right) {
+                             Population right) {
         int i1 = 0;
         int i2 = 0;
         int size = left.getSchedules().size() + right.getSchedules().size();
@@ -220,18 +162,28 @@ public class Driver extends Application {
         return result;
     }
 
-    private void printFinalResult(Population population, Driver driver) {
+    /**
+     *
+     * @param population
+     * @param generateSchedule
+     */
+    private void printFinalResult(Population population, GenerateSchedule generateSchedule) {
 
         System.out.println(">>> Generation #: " + totalGenerations);
         System.out.print("Schedule #|");
         System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
         System.out.println("---------------------------------------------------------");
-        System.out.println(driver.scheduleNumber + "---" + population.getSchedules().get(0) + "----" + population.getSchedules().get(0).getFitness()
+        System.out.println(generateSchedule.scheduleNumber + "---" + population.getSchedules().get(0) + "----" + population.getSchedules().get(0).getFitness()
                 + "-----" + population.getSchedules().get(0).getNumberOfConflicts());
-        driver.printSchedule(population.getSchedules().get(0), totalGenerations);
+        generateSchedule.printSchedule(population.getSchedules().get(0), totalGenerations);
     }
 
+    /**
+     *
+     * @param schedule
+     * @param generation
+     */
     private void printSchedule(Schedule schedule, int generation) {
 
         ArrayList<Lecture> lectures = schedule.getLectures();
@@ -264,10 +216,10 @@ public class Driver extends Application {
             lectureNumber++;
         });
 
-        if (schedule.getFitness() == 1)
-            System.out.println(">>> Solution generated in " + (generation + 1) + " generations");
-        System.out.print("\t\t----------------------------------------------------------------------------");
-        System.out.println("--------------------------------------------------------------------");
+//        if (schedule.getFitness() == 1)
+//            System.out.println(">>> Solution generated in " + (generation + 1) + " generations");
+//        System.out.print("\t\t----------------------------------------------------------------------------");
+//        System.out.println("--------------------------------------------------------------------");
     }
 
     private void printAvailableData() {
@@ -294,33 +246,54 @@ public class Driver extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Generation-Fitness Chart");
 
+        //fitness
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
 
         xAxis.setLabel("Generation Number");
         yAxis.setLabel("Fitness Score");
 
-        final LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
+        //conflicts
+        final NumberAxis x1 = new NumberAxis();
+        final NumberAxis y1 = new NumberAxis();
 
-        lineChart.setTitle("Timetable fitness chart");
+        x1.setLabel("Generation number");
+        y1.setLabel("Conflicts");
 
-        Scene scene = new Scene(lineChart, 800, 600);
+        final LineChart<Number, Number> lineChartFitness = new LineChart<>(xAxis, yAxis);
+        final LineChart<Number, Number> lineChartConflicts = new LineChart<>(x1, y1);
 
-        XYChart.Series series = plotData();
-        lineChart.getData().add(series);
+        lineChartFitness.setTitle("Timetable fitness chart");
 
-        primaryStage.setScene(scene);
+        lineChartConflicts.setTitle("Timetable conflicts chart");
+
+        Scene scene1 = new Scene(lineChartFitness, 800, 600);
+        Scene scene2 = new Scene(lineChartConflicts, 800, 600);
+
+        XYChart.Series series1 = plotData();
+        lineChartFitness.getData().add(series1);
+
+        XYChart.Series series2 = plotDataConflicts();
+        lineChartConflicts.getData().add(series2);
+
+        primaryStage.setScene(scene1);
+        primaryStage.show();
+
+//        primaryStage.setScene(scene2);
         primaryStage.show();
     }
 
     private XYChart.Series plotData() {
         XYChart.Series series = new XYChart.Series();
-//        System.out.println("generations: " + totalGenerations);
-//        System.out.println("fitness list: " + fitnessList.size());
-
         for (int i = 0; i < totalGenerations && fitnessList.size() != 0; i++)
             series.getData().add(new XYChart.Data<>(i, fitnessList.get(i)));
+        return series;
+    }
 
+    private XYChart.Series plotDataConflicts() {
+        XYChart.Series series = new XYChart.Series();
+        for (int i = 0; i < totalGenerations && totalConflicts.size() != 0; i++)
+            series.getData().add(new XYChart.Data<>(i, totalConflicts.get(i)));
         return series;
     }
 }
