@@ -140,7 +140,8 @@ public class Driver extends Application {
 
         JSONObject jsonObject = null;
         try {
-            Object obj = parser.parse(new FileReader("C:\\Users\\siddh\\OneDrive\\Documents\\GitHub\\Genetic-Algorithm\\src\\main\\resources\\constants.json"));
+            Object obj = parser.parse(new FileReader("src/main/resources/constants.json"));
+//            Object obj = parser.parse(new FileReader("C:\\Users\\siddh\\OneDrive\\Documents\\GitHub\\Genetic-Algorithm\\src\\main\\resources\\constants.json"));
 
             jsonObject = (JSONObject) obj;
 
