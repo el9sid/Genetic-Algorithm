@@ -6,7 +6,7 @@ public class Lecture {
     private Department department;
     private Course course;
     private Professor professor;
-    private MeetingTime meetingTime;
+    private LectureTime lectureTime;
     private Room room;
 
     public Lecture(int id, Department department, Course course) {
@@ -19,8 +19,8 @@ public class Lecture {
         this.professor = professor;
     }
 
-    public void setMeetingTime(MeetingTime meetingTime) {
-        this.meetingTime = meetingTime;
+    public void setLectureTime(LectureTime lectureTime) {
+        this.lectureTime = lectureTime;
     }
 
     public void setRoom(Room room) {
@@ -43,8 +43,8 @@ public class Lecture {
         return professor;
     }
 
-    public MeetingTime getMeetingTime() {
-        return meetingTime;
+    public LectureTime getLectureTime() {
+        return lectureTime;
     }
 
     public Room getRoom() {
@@ -56,7 +56,7 @@ public class Lecture {
         return "{"+department.getName() +
                 ", " + course.getNumber() +
                 ", " + professor.getId() +
-                ", " + meetingTime.getId() +
+                ", " + lectureTime.getId() +
                 ", " + room.getNumber() +
                 '}';
     }

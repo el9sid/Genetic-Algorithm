@@ -24,7 +24,7 @@ public class Schedule {
         new ArrayList<Department>(data.getDepartments()).forEach(department -> {
                     department.getCourses().forEach(course -> {
                         Lecture newLecture = new Lecture(lectureNumber++, department, course);
-                        newLecture.setMeetingTime(data.getMeetingTimes().get((int) (data.getMeetingTimes().size() * Math.random())));
+                        newLecture.setLectureTime(data.getLectureTimes().get((int) (data.getLectureTimes().size() * Math.random())));
                         newLecture.setRoom(data.getRooms().get((int) (data.getRooms().size() * Math.random())));
                         newLecture.setProfessor(data.getProfessors().get((int) (data.getProfessors().size() * Math.random())));
                         lectures.add(newLecture);
@@ -61,8 +61,8 @@ public class Schedule {
             //check if room capacity is less than the number of students
             if(x.getRoom().getMaxCapacity() < x.getCourse().getMaxStudents()) numberOfConflicts++;
             lectures.stream().filter(y -> lectures.indexOf(y) >= lectures.indexOf(x)).forEach(y -> {
-                //check if the meeting times are same for different lectures
-                if(x.getMeetingTime() == y.getMeetingTime() && x.getId() != y.getId()){
+                //check if the lecture times are same for different lectures
+                if(x.getLectureTime() == y.getLectureTime() && x.getId() != y.getId()){
                     //check if same room is assigned to multiple lectures
                     if(x.getRoom() == y.getRoom()) numberOfConflicts++;
                     //check if an instructor has multiple engagements at the same time

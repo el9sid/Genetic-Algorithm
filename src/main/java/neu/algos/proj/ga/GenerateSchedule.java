@@ -70,7 +70,7 @@ public class GenerateSchedule extends Application {
 
         System.out.println(">>> Generation #: " + generationNumber);
         System.out.print("Schedule #|");
-        System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
+        System.out.print("Lectures [Department, Lecture, Room, Professor, Lecture-time]");
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
         System.out.println("---------------------------------------------------------");
 
@@ -171,7 +171,7 @@ public class GenerateSchedule extends Application {
 
         System.out.println(">>> Generation #: " + totalGenerations);
         System.out.print("Schedule #|");
-        System.out.print("Lectures [Department, Lecture, Room, Professor, Meeting-time]");
+        System.out.print("Lectures [Department, Lecture, Room, Professor, Lecture-time]");
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
         System.out.println("---------------------------------------------------------");
         System.out.println(generateSchedule.scheduleNumber + "---" + population.getSchedules().get(0) + "----" + population.getSchedules().get(0).getFitness()
@@ -189,7 +189,7 @@ public class GenerateSchedule extends Application {
         ArrayList<Lecture> lectures = schedule.getLectures();
         System.out.print("\n \t \t");
         System.out.println("Lecture #  | \tDepartment \t\t|\t\t Course (number, max students) \t | Room (Capacity) | " +
-                "Professor (ID) \t\t| Meeting-time (ID)");
+                "Professor (ID) \t\t| Lecture-time (ID)");
         System.out.print("\t\t");
         System.out.print("----------------------------------------------------------------------------");
         System.out.println("-------------------------------------------------------------------");
@@ -198,7 +198,7 @@ public class GenerateSchedule extends Application {
             int coursesIndex = data.getCourses().indexOf(x.getCourse());
             int roomsIndex = data.getRooms().indexOf(x.getRoom());
             int instructorsIndex = data.getProfessors().indexOf(x.getProfessor());
-            int meetingTimeIndex = data.getMeetingTimes().indexOf(x.getMeetingTime());
+            int lectureTimeIndex = data.getLectureTimes().indexOf(x.getLectureTime());
 
             System.out.print("\t\t\t");
             System.out.print(String.format("  %1$02d  ", lectureNumber) + " |\t");
@@ -210,8 +210,8 @@ public class GenerateSchedule extends Application {
                     + data.getRooms().get(roomsIndex).getMaxCapacity()) + ")\t   |");
             System.out.print(String.format("%1$20s", data.getProfessors().get(instructorsIndex).getName() + " ("
                     + data.getProfessors().get(instructorsIndex).getId()) + ")\t|");
-            System.out.println(data.getMeetingTimes().get(meetingTimeIndex).getTime()
-                    + " (" + data.getMeetingTimes().get(meetingTimeIndex).getId() + ")");
+            System.out.println(data.getLectureTimes().get(lectureTimeIndex).getTime()
+                    + " (" + data.getLectureTimes().get(lectureTimeIndex).getId() + ")");
 
             lectureNumber++;
         });
@@ -237,8 +237,8 @@ public class GenerateSchedule extends Application {
         System.out.println("Instructors -------->");
         data.getProfessors().forEach(x -> System.out.println("instructor id: " + x.getId()
                 + ", instructor name: " + x.getName()));
-        System.out.println("Meeting Times -------->");
-        data.getMeetingTimes().forEach(x -> System.out.println("meeting id: " + x.getId() + ", meeting time: " + x.getTime()));
+        System.out.println("Lecture Times -------->");
+        data.getLectureTimes().forEach(x -> System.out.println("lecture id: " + x.getId() + ", lecture time: " + x.getTime()));
         System.out.println("---------------------------------------------------------");
     }
 

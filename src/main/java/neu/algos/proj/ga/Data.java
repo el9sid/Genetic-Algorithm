@@ -9,7 +9,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 public class Data {
 
@@ -17,7 +16,7 @@ public class Data {
     private ArrayList<Professor> professors;
     private ArrayList<Department> departments;
     private ArrayList<Course> courses;
-    private ArrayList<MeetingTime> meetingTimes;
+    private ArrayList<LectureTime> lectureTimes;
 
     private int numberOfLectures = 0;
 
@@ -39,13 +38,13 @@ public class Data {
 //        rooms.addAll((Collection<? extends Room>) readJSONData().get("Room List"));
 //        System.out.println(rooms);
 
-        MeetingTime meetingTime1 = new MeetingTime("MT1", "MWF 09:00 - 10:00");
-        MeetingTime meetingTime2 = new MeetingTime("MT2", "MWF 10:00 - 11:00");
-        MeetingTime meetingTime3 = new MeetingTime("MT3", "TTH 09:00 - 10:30");
-        MeetingTime meetingTime4 = new MeetingTime("MT4", "TTH 10:30 - 12:00");
-        MeetingTime meetingTime5 = new MeetingTime("MT5", "SSU 10:30 - 12:00");
-        MeetingTime meetingTime6 = new MeetingTime("MT5", "MWF 11:30 - 13:30");
-        meetingTimes = new ArrayList<MeetingTime>(Arrays.asList(meetingTime1, meetingTime2, meetingTime3, meetingTime4, meetingTime5, meetingTime6));
+        LectureTime lectureTime1 = new LectureTime("LT1", "MWF 09:00 - 10:00");
+        LectureTime lectureTime2 = new LectureTime("LT2", "MWF 10:00 - 11:00");
+        LectureTime lectureTime3 = new LectureTime("LT3", "TTH 09:00 - 10:30");
+        LectureTime lectureTime4 = new LectureTime("LT4", "TTH 10:30 - 12:00");
+        LectureTime lectureTime5 = new LectureTime("LT5", "SSU 10:30 - 12:00");
+        LectureTime lectureTime6 = new LectureTime("LT5", "MWF 11:30 - 13:30");
+        lectureTimes = new ArrayList<LectureTime>(Arrays.asList(lectureTime1, lectureTime2, lectureTime3, lectureTime4, lectureTime5, lectureTime6));
 
         Professor professor1 = new Professor("P1", "Dr. Hillyard");
         Professor professor2 = new Professor("P2", "Dr. Bugrara");
@@ -106,8 +105,8 @@ public class Data {
         return courses;
     }
 
-    public ArrayList<MeetingTime> getMeetingTimes() {
-        return meetingTimes;
+    public ArrayList<LectureTime> getLectureTimes() {
+        return lectureTimes;
     }
 
     public int getNumberOfLectures() {

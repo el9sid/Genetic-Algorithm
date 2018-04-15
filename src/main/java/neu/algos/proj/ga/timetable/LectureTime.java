@@ -1,11 +1,11 @@
 package neu.algos.proj.ga.timetable;
 
-public class MeetingTime {
+public class LectureTime {
 
     private String id;
     private String time;
 
-    public MeetingTime(String id, String time) {
+    public LectureTime(String id, String time) {
         this.id = id;
         this.time = time;
     }
