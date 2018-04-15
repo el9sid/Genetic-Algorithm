@@ -43,7 +43,9 @@ public class Data {
         MeetingTime meetingTime2 = new MeetingTime("MT2", "MWF 10:00 - 11:00");
         MeetingTime meetingTime3 = new MeetingTime("MT3", "TTH 09:00 - 10:30");
         MeetingTime meetingTime4 = new MeetingTime("MT4", "TTH 10:30 - 12:00");
-        meetingTimes = new ArrayList<MeetingTime>(Arrays.asList(meetingTime1, meetingTime2, meetingTime3, meetingTime4));
+        MeetingTime meetingTime5 = new MeetingTime("MT5", "SSU 10:30 - 12:00");
+        MeetingTime meetingTime6 = new MeetingTime("MT5", "MWF 11:30 - 13:30");
+        meetingTimes = new ArrayList<MeetingTime>(Arrays.asList(meetingTime1, meetingTime2, meetingTime3, meetingTime4, meetingTime5, meetingTime6));
 
         Professor professor1 = new Professor("P1", "Dr. Hillyard");
         Professor professor2 = new Professor("P2", "Dr. Bugrara");
@@ -55,10 +57,6 @@ public class Data {
         Professor professor8 = new Professor("P8", "Dr. Rai");
         Professor professor9 = new Professor("P9", "Dr. Sharma");
         Professor professor10 = new Professor("P10", "Dr. Singhal");
-
-
-
-
 
 
         professors = new ArrayList<Professor>(Arrays.asList(professor1, professor2, professor3, professor4, professor5, professor6, professor7, professor8, professor9, professor10));

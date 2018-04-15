@@ -6,8 +6,8 @@ import static org.junit.Assert.*;
 
 public class GeneticAlgorithmTest {
 
-    Data data = new Data();
-    GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(data);
+    private Data data = new Data();
+    private GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(data);
 
 
     @Test
@@ -28,6 +28,9 @@ public class GeneticAlgorithmTest {
     public void mutatePopulation() {
         Population p1 = new Population(200, data);
         Population p2 = geneticAlgorithm.mutatePopulation(p1);
+
+        assertNotNull(p2);
+        assertNotNull(p1);
         assertNotSame(p2,p1);
     }
 
@@ -41,5 +44,8 @@ public class GeneticAlgorithmTest {
 
     @Test
     public void evolvePopulation() {
+        Population p1 = new Population(200, data);
+        Population p2 = geneticAlgorithm.evolvePopulation(p1);
+        assertNotSame(p1,p2);
     }
 }
