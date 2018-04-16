@@ -1,7 +1,7 @@
 {
-    "population_size": 100,
+    "population_size": 1000,
     "mutation_rate": 0.02,
-    "crossover_rate": 0.9,
+    "crossover_rate": 0.5,
     "selection_size": 10,
     "elite_schedule_count": 25
 
