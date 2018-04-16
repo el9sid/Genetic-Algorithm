@@ -44,13 +44,24 @@ public class GeneticAlgorithmTest {
         assertNotNull(s1);
         assertNotNull(s2);
         assertNotSame(s1, s3);
-        assertNotSame(s2, s3);
+        assertFalse("Schedules are equal",s2 == s3);
     }
 
     @Test
     public void evolvePopulation() {
         Population p1 = new Population(200, data);
         Population p2 = geneticAlgorithm.evolvePopulation(p1);
-        assertNotSame(p1,p2);
+        assertNotNull(p1);
+        assertNotNull(p2);
+        assertFalse("Populations are equal",p1==p2);
+    }
+
+    @Test
+    public void mutateSchedule() {
+        Population p1 = new Population(200, data);
+        Schedule s1 = p1.sortByFitness().getSchedules().get(150);
+        Schedule mutateSchedule = geneticAlgorithm.mutateSchedule(s1);
+
+        assertEquals(s1, mutateSchedule);
     }
 }

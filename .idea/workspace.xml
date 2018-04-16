@@ -6,9 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef38f0ef-0209-4940-9ba3-619941b62ad3" name="Default" comment="adding project jar">
+    <list default="true" id="ef38f0ef-0209-4940-9ba3-619941b62ad3" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Project_Jar.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java" afterPath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/constants.json" afterPath="$PROJECT_DIR$/src/main/resources/constants.json" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java" afterPath="$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,11 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneticAlgorithm.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeneticAlgorithm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1225">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="500">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneticAlgorithmTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -60,6 +73,16 @@
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constants.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/constants.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,14 +153,14 @@
         <option value="$PROJECT_DIR$/src/main/resources/data.json" />
         <option value="$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/ScheduleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Driver.java" />
-        <option value="$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Schedule.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Data.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/constants.json" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/constants.json" />
+        <option value="$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java" />
       </list>
     </option>
   </component>
@@ -304,7 +327,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GeneticAlgorithmTest">
+  <component name="RunManager" selected="JUnit.GeneticAlgorithmTest.evolvePopulation">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -514,10 +537,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GenerateSchedule" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.mutateSchedule" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.evolvePopulation" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.evolvePopulation" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.mutateSchedule" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GenerateSchedule" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.mutatePopulation" />
       </list>
     </recent_temporary>
@@ -541,7 +564,7 @@
       <workItem from="1523387681972" duration="14786000" />
       <workItem from="1523567325047" duration="8157000" />
       <workItem from="1523648536511" duration="3304000" />
-      <workItem from="1523653701121" duration="49125000" />
+      <workItem from="1523653701121" duration="50846000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1523213234956</created>
@@ -753,43 +776,50 @@
       <option name="project" value="LOCAL" />
       <updated>1523843450838</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="test">
+      <created>1523844376408</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1523844376408</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 18h 57m 49s.xml">
-      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 19h 28m 31s.xml">
-      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 19h 28m 38s.xml">
-      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 19h 28m 41s.xml">
-      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 19h 32m 22s.xml">
       <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 20h 41m 43s.xml">
       <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 18h 58m 26s.xml">
+    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 22h 30m 20s.xml">
+      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 22h 31m 15s.xml">
+      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GeneticAlgorithmTest_evolvePopulation - 2018.04.15 at 22h 34m 28s.xml">
+      <configuration name="GeneticAlgorithmTest.evolvePopulation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 22h 29m 48s.xml">
       <configuration name="GeneticAlgorithmTest.mutateSchedule" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 18h 59m 54s.xml">
+    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 22h 32m 27s.xml">
       <configuration name="GeneticAlgorithmTest.mutateSchedule" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 19h 01m 33s.xml">
+    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 22h 32m 47s.xml">
       <configuration name="GeneticAlgorithmTest.mutateSchedule" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 19h 02m 04s.xml">
+    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 22h 32m 59s.xml">
+      <configuration name="GeneticAlgorithmTest.mutateSchedule" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 22h 33m 14s.xml">
       <configuration name="GeneticAlgorithmTest.mutateSchedule" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80279000" />
+    <option name="totallyTimeSpent" value="82000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -831,7 +861,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added fitness calculation functionality" />
     <MESSAGE value="added code to generate population and sort population by fitness score" />
     <MESSAGE value="added method definitions" />
     <MESSAGE value="added constants" />
@@ -856,11 +885,12 @@
     <MESSAGE value="Updated readme and added a project jar file." />
     <MESSAGE value="Updated readme fonts size" />
     <MESSAGE value="removed &quot;:&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed &quot;:&quot;" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1157,14 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Course.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1208,14 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1234,8 +1248,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="500">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
           <folding />
         </state>
       </provider>

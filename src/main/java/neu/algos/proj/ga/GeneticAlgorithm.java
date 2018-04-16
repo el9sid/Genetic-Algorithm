@@ -58,7 +58,7 @@ public class GeneticAlgorithm {
 
         // performing mutation on schedules other than elite schedules
         IntStream.range(GenerateSchedule.ELITE_SCHEDULES_COUNT, population.getSchedules().size())
-                .forEach(x -> schedules.set(x, mutatePopulation.getSchedules().get(x)));
+                .forEach(x -> schedules.set(x, mutateSchedule(population.getSchedules().get(x))));
         return mutatePopulation;
     }
 
@@ -75,7 +75,6 @@ public class GeneticAlgorithm {
         Schedule schedule = new Schedule(data).initialize();
         IntStream.range(0, scheduleMutation.getLectures().size()).forEach(x -> {
             if(GenerateSchedule.MUTATION_RATE > Math.random()) scheduleMutation.getLectures().set(x, schedule.getLectures().get(x));
-            else scheduleMutation.getLectures().set(x-1, scheduleMutation.getLectures().get(x));
         });
 
         return scheduleMutation;
