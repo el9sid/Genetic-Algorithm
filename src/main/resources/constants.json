@@ -2,7 +2,7 @@
     "population_size": 100,
     "mutation_rate": 0.9,
     "crossover_rate": 0.9,
-    "tournament_selection_size": 10,
+    "selection_size": 10,
     "elite_schedule_count": 25
 
 }

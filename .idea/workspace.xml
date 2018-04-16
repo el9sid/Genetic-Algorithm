@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Genetic-Algorithm:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ef38f0ef-0209-4940-9ba3-619941b62ad3" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/Genetic_Algorithm_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Data.java" afterPath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Data.java" />
+      <change beforePath="$PROJECT_DIR$/Genetic-Algorithm.iml" afterPath="$PROJECT_DIR$/Genetic-Algorithm.iml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java" afterPath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Schedule.java" afterPath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Schedule.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Lecture.java" afterPath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Lecture.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/MeetingTime.java" afterPath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/LectureTime.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java" afterPath="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/constants.json" afterPath="$PROJECT_DIR$/src/main/resources/constants.json" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,29 +31,22 @@
       <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="1100">
               <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Data.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="45" column="53" lean-forward="false" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LectureTime.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/LectureTime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="300">
+                <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -54,28 +54,18 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="250">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lecture.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Lecture.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="55" column="27" lean-forward="false" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenerateSchedule.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GenerateSchedule.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="240" column="102" lean-forward="false" selection-start-line="240" selection-start-column="102" selection-end-line="240" selection-end-column="102" />
+            <state relative-caret-position="225">
+              <caret line="24" column="79" lean-forward="true" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -120,7 +110,6 @@
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Room.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Instructor.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Lecture.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/constants.txt" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Population.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Course.java" />
@@ -128,12 +117,14 @@
         <option value="$PROJECT_DIR$/src/main/resources/data.json" />
         <option value="$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/ScheduleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Driver.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/constants.json" />
         <option value="$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Schedule.java" />
         <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Data.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/resources/constants.json" />
+        <option value="$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java" />
       </list>
     </option>
   </component>
@@ -219,6 +210,39 @@
               <item name="ga" type="462c0819:PsiDirectoryNode" />
               <item name="timetable" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GAScheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genetic-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GAScheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genetic-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GAScheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genetic-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GAScheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genetic-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ga" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GAScheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genetic-Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -227,11 +251,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/PortableGit/mingw64/libexec/git-core/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -262,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.GeneticAlgorithmTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -472,8 +496,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.GenerateSchedule" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GenerateSchedule" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.mutateSchedule" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.evolvePopulation" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.GeneticAlgorithmTest.mutatePopulation" />
@@ -499,7 +523,7 @@
       <workItem from="1523387681972" duration="14786000" />
       <workItem from="1523567325047" duration="8157000" />
       <workItem from="1523648536511" duration="3304000" />
-      <workItem from="1523653701121" duration="41148000" />
+      <workItem from="1523653701121" duration="46066000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1523213234956</created>
@@ -662,13 +686,31 @@
       <option name="project" value="LOCAL" />
       <updated>1523835637922</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="removed sample class">
+      <created>1523836395346</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1523836395346</updated>
+    </task>
+    <task id="LOCAL-00025" summary="added generation number">
+      <created>1523837844173</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1523837844173</updated>
+    </task>
+    <task id="LOCAL-00026" summary="updated output format">
+      <created>1523839160823</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1523839160823</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 18h 53m 40s.xml">
-      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 18h 57m 49s.xml">
       <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
     </history-entry>
@@ -682,6 +724,9 @@
       <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 19h 32m 22s.xml">
+      <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GeneticAlgorithmTest - 2018.04.15 at 20h 41m 43s.xml">
       <configuration name="GeneticAlgorithmTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="GeneticAlgorithmTest_mutateSchedule - 2018.04.15 at 18h 58m 26s.xml">
@@ -698,7 +743,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72302000" />
+    <option name="totallyTimeSpent" value="77220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -740,7 +785,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
     <MESSAGE value="initial directory commit" />
     <MESSAGE value="updated package structure" />
     <MESSAGE value="added timetable classes (pojos)" />
@@ -763,7 +807,10 @@
     <MESSAGE value="changed file path" />
     <MESSAGE value="added more test data, added code for parallel execution(not working till now)" />
     <MESSAGE value="-added charts folder(contains charts and output screenshots)&#10;-removed unused classes&#10;-removed commented code" />
-    <option name="LAST_COMMIT_MESSAGE" value="-added charts folder(contains charts and output screenshots)&#10;-removed unused classes&#10;-removed commented code" />
+    <MESSAGE value="removed sample class" />
+    <MESSAGE value="added generation number" />
+    <MESSAGE value="updated output format" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated output format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -992,17 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#486#487#0" expanded="false" />
-            <element signature="e#515#516#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/ext/jfxrt.jar!/javafx/application/Application.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1059,34 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="true" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-            <element signature="e#296#297#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Population.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -1098,38 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="240" column="102" lean-forward="false" selection-start-line="240" selection-start-column="102" selection-end-line="240" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="45" column="53" lean-forward="false" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/LectureTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1138,10 +1114,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/neu/algos/proj/ga/GeneticAlgorithmTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/timetable/Lecture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="55" column="27" lean-forward="false" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+        <state relative-caret-position="550">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GeneticAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="300">
+            <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/algos/proj/ga/GenerateSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" column="79" lean-forward="true" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="79" />
           <folding />
         </state>
       </provider>
@@ -1149,6 +1200,39 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+              <type id="jpa-descriptors" />
+              <type id="javaee-facet-resources" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>Genetic-Algorithm:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -1172,6 +1256,19 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Genetic-Algorithm</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>9.0</last-edited>
@@ -1186,6 +1283,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: com.googlecode.json-simple:json-simple:1.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

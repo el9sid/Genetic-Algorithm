@@ -22,7 +22,7 @@ public class GenerateSchedule extends Application {
     private static final int POPULATION_SIZE = (int) ((long) readJSONData().get("population_size"));
     public static final double MUTATION_RATE = (double) readJSONData().get("mutation_rate");
     public static final double CROSSOVER_RATE = (double) readJSONData().get("crossover_rate");
-    public static final int TOURNAMENT_SELECTION_SIZE = (int) ((long) readJSONData().get("tournament_selection_size"));
+    public static final int SELECTION_SIZE = (int) ((long) readJSONData().get("selection_size"));
     public static final int ELITE_SCHEDULES_COUNT = (int) ((long) readJSONData().get("elite_schedule_count"));
     private static ArrayList<Double> fitnessList = new ArrayList<>();
     private static int totalGenerations;

@@ -39,8 +39,8 @@ public class GeneticAlgorithm {
 
     public Population selectTournamentPopulation(Population population) {
 
-        Population tournamentPopulation = new Population(GenerateSchedule.TOURNAMENT_SELECTION_SIZE, data);
-        IntStream.range(0, GenerateSchedule.TOURNAMENT_SELECTION_SIZE).forEach(x -> {
+        Population tournamentPopulation = new Population(GenerateSchedule.SELECTION_SIZE, data);
+        IntStream.range(0, GenerateSchedule.SELECTION_SIZE).forEach(x -> {
             //get random populations based on the tournament size
             tournamentPopulation.getSchedules()
                     .set(x, population.getSchedules()
