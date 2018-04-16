@@ -1,6 +1,6 @@
 # Project: Schedule-Generator
 
-## Problem Statement:
+## Problem Statement
 ##### Creating a schedule without any conflict is a tedious job and could take up a lot of time if done manually. At the start of every semester, every school has to create a schedule of lectures for that particular session.
 
 ## Solution
