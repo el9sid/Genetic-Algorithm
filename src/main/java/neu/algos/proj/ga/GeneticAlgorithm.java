@@ -71,14 +71,15 @@ public class GeneticAlgorithm {
         return crossoverSchedule;
     }
 
-//    public Schedule mutateSchedule(Schedule scheduleMutation) {
-//        Schedule schedule = new Schedule(data).initialize();
-//        IntStream.range(0, scheduleMutation.getLectures().size()).forEach(x -> {
-//            if(GenerateSchedule.MUTATION_RATE > Math.random()) scheduleMutation.getLectures().set(x, schedule.getLectures().get(x));
-//        });
-//
-//        return scheduleMutation;
-//    }
+    public Schedule mutateSchedule(Schedule scheduleMutation) {
+        Schedule schedule = new Schedule(data).initialize();
+        IntStream.range(0, scheduleMutation.getLectures().size()).forEach(x -> {
+            if(GenerateSchedule.MUTATION_RATE > Math.random()) scheduleMutation.getLectures().set(x, schedule.getLectures().get(x));
+            else scheduleMutation.getLectures().set(x-1, scheduleMutation.getLectures().get(x));
+        });
+
+        return scheduleMutation;
+    }
 
     public Population evolvePopulation(Population population) {
         return mutatePopulation(crossoverPopulation(population));
