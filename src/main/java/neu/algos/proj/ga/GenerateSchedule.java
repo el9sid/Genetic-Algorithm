@@ -93,6 +93,7 @@ public class GenerateSchedule extends Application {
             ++generationNumber;
             generateSchedule.scheduleNumber++;
             Schedule bestSchedule = population.getSchedules().get(0);
+            System.out.println(">>>Generation #"+generationNumber);
             System.out.println(bestSchedule + "---" + bestSchedule.getFitness() + "---" + bestSchedule.getNumberOfConflicts() + "----"
                     + bestSchedule.getLectures().size());
 
