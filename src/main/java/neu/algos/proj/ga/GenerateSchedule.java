@@ -69,19 +69,18 @@ public class GenerateSchedule extends Application {
         generateSchedule.printAvailableData();
 
         System.out.println(">>> Generation #: " + generationNumber);
-        System.out.print("Schedule #|");
-        System.out.print("Lectures [Department, Lecture, Room, Professor, Lecture-time]");
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
-        System.out.println("---------------------------------------------------------");
+        System.out.print("Schedule =>");
 
         GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(generateSchedule.data);
         Population population = new Population(GenerateSchedule.POPULATION_SIZE, generateSchedule.data).sortByFitness();
 
         //printing the initial population
         Schedule initialSchedule = population.getSchedules().get(0);
-        System.out.println(initialSchedule + "===" + initialSchedule.getFitness() + "===" + initialSchedule.getNumberOfConflicts());
+        System.out.println("Initial Schedule: "+initialSchedule);
+        System.out.println("Initial Fitness: "+initialSchedule.getFitness());
+        System.out.println("Initial Conflicts # "+initialSchedule.getNumberOfConflicts());
 
-        generateSchedule.printSchedule(population.getSchedules().get(0), generationNumber);
+        generateSchedule.printSchedule(population.getSchedules().get(0));
 
         generateSchedule.lectureNumber = 1;
         while (population.getSchedules().get(0).getFitness() != 1.0) {
@@ -93,11 +92,11 @@ public class GenerateSchedule extends Application {
             ++generationNumber;
             generateSchedule.scheduleNumber++;
             Schedule bestSchedule = population.getSchedules().get(0);
-            System.out.println(">>>Generation #"+generationNumber);
-            System.out.println(bestSchedule + "---" + bestSchedule.getFitness() + "---" + bestSchedule.getNumberOfConflicts() + "----"
-                    + bestSchedule.getLectures().size());
+            System.out.println(">>> Generation # "+generationNumber);
+            System.out.println("Best Schedule: "+bestSchedule);
+            System.out.println("Fitness score: "+bestSchedule.getFitness());
+            System.out.println("Conflicts # "+bestSchedule.getNumberOfConflicts());
 
-//            generateSchedule.printSchedule(population.getSchedules().get(0), generationNumber);
             fitnessList.add(population.getSchedules().get(0).getFitness());
             totalConflicts.add(population.getSchedules().get(5).getNumberOfConflicts());
         }
@@ -170,22 +169,14 @@ public class GenerateSchedule extends Application {
      */
     private void printFinalResult(Population population, GenerateSchedule generateSchedule) {
 
-        System.out.println(">>> Generation #: " + totalGenerations);
-        System.out.print("Schedule #|");
-        System.out.print("Lectures [Department, Lecture, Room, Professor, Lecture-time]");
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t | Fitness | Conflicts");
-        System.out.println("---------------------------------------------------------");
-        System.out.println(generateSchedule.scheduleNumber + "---" + population.getSchedules().get(0) + "----" + population.getSchedules().get(0).getFitness()
-                + "-----" + population.getSchedules().get(0).getNumberOfConflicts());
-        generateSchedule.printSchedule(population.getSchedules().get(0), totalGenerations);
+        generateSchedule.printSchedule(population.getSchedules().get(0));
     }
 
     /**
      *
      * @param schedule
-     * @param generation
      */
-    private void printSchedule(Schedule schedule, int generation) {
+    private void printSchedule(Schedule schedule) {
 
         ArrayList<Lecture> lectures = schedule.getLectures();
         System.out.print("\n \t \t");
@@ -216,11 +207,6 @@ public class GenerateSchedule extends Application {
 
             lectureNumber++;
         });
-
-//        if (schedule.getFitness() == 1)
-//            System.out.println(">>> Solution generated in " + (generation + 1) + " generations");
-//        System.out.print("\t\t----------------------------------------------------------------------------");
-//        System.out.println("--------------------------------------------------------------------");
     }
 
     private void printAvailableData() {
